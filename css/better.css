@@ -1,0 +1,323 @@
+/* Codierung nach UTF-8 */
+@charset "utf-8";
+
+/* Allgemeiner Stil für den gesamten Body */
+body {
+    font-family: Arial, sans-serif; /* Verwendete Schriftart für den gesamten Text auf der Webseite */
+    max-width: 60em; /* Maximale Breite des Hauptinhaltsbereichs */
+    margin: 1em auto; /* Äußerer Abstand oben und unten, um den Inhalt in der Mitte auszurichten */
+    background-color: #ffffff; /* Hintergrundfarbe des gesamten Body */
+}
+
+/* Stil für den Hauptinhalt der Seite (Container) */
+.page {
+    max-width: 800px; /* Maximale Breite des Hauptinhaltsbereichs der Seite */
+    margin: 20px auto; /* Abstand oben und unten, um den Inhalt zentriert anzuzeigen */
+    padding: 20px; /* Innenabstand des Hauptinhaltsbereichs */
+    background-color: white; /* Hintergrundfarbe des Hauptinhaltsbereichs */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Schatten-Effekt für den Hauptinhalt */
+}
+
+/* Stil für Überschriften vom Typ H1 und H2 */
+h1 {
+    background-color: #e6e6e6; /* Hintergrundfarbe für H1-Überschriften */
+    padding: 0.5em; /* Innenabstand für H1-Überschriften */
+    font-family: sans-serif; /* Verwendete Schriftart für H1-Überschriften */
+    border-radius: 0 1em 0em 1em; /* Abrundung der Ecken für H1-Überschriften */
+    text-align: center; /* Textausrichtung in der Mitte */
+}
+
+h2 {
+    background-color: #efeeee; /* Hintergrundfarbe für H2-Überschriften */
+    padding: 0.5em; /* Innenabstand für H2-Überschriften */
+    font-family: sans-serif; /* Verwendete Schriftart für H2-Überschriften */
+    text-align: center; /* Textausrichtung in der Mitte */
+    margin: 0;
+}
+
+/* Stil für den Header-Bereich */
+/* Header-Hintergrund */
+header {
+    height: 5em; /* Höhe des Header-Bereichs */
+    padding: 0 1em; /* Innenabstand oben und unten, links und rechts */
+    margin-bottom: 2em; /* Abstand nach unten zum Hauptinhalt */
+    display: grid; /* Verwendung des Grid-Layouts für den Header */
+    grid-template-columns: 8em 1fr 1fr; /* Aufteilung der Spalten im Grid */
+}
+
+/* Stil für das Logo im Header */
+header p:first-of-type {
+    font-size: 2em; /* Schriftgröße für das erste P-Element im Header (Logo) */
+    font-weight: bold; /* Fetter Schriftstil für das Logo */
+}
+
+/* Stil für den letzten Text im Header */
+header p:last-of-type {
+    transform: rotate(8deg); /* Rotation des Texts um 8 Grad */
+    border: thin solid; /* Dünner Rahmen um den Text */
+    padding: 0.5em; /* Innenabstand für den Text */
+    border-radius: 0.2em; /* Abrundung der Ecken */
+    align-self: end; /* Vertikale Ausrichtung am unteren Rand des Grids */
+    width: 12.5em; /* Festgelegte Breite für das Element */
+}
+
+/* Stil für den Link im Logo im Header */
+header #backlink {
+    display: inline-block; /* Inline-Block-Element */
+    text-shadow: none; /* Kein Textschatten */
+    color: transparent; /* Transparente Schriftfarbe */
+    background: transparent; /* Transparenter Hintergrund */
+    background-size: contain; /* Hintergrundbildgröße: enthalten */
+    width: 5em; /* Breite des Link-Bereichs */
+    height: 3em; /* Höhe des Link-Bereichs */
+}
+
+/* Stil für allgemeinen Text im Header */
+header p {
+    margin-left: 10px; /* Linker Abstand des Texts im Header */
+}
+
+/* Stil für den Navigationsbereich */
+/* Hintergrund des Navigationsbereichs */
+nav {
+    background-color: #eee; /* Hintergrundfarbe des Navigationsbereichs */
+    padding: 10px; /* Innenabstand im Navigationsbereich */
+}
+
+/* Stil für die Navigationsliste */
+nav ul {
+    list-style: none; /* Entfernt die Aufzählungspunkte in Listen */
+    display: flex; /* Verwendung des Flexbox-Layouts für die Navigation */
+    justify-content: space-around; /* Gleichmäßige Aufteilung des verfügbaren Platzes */
+}
+
+/* Stil für Navigationslinks */
+nav a {
+    text-decoration: none; /* Entfernt die Unterstreichung von Links */
+    color: #333; /* Schriftfarbe der Links */
+}
+
+/* Stil für den Hover-Effekt auf Navigationslinks */
+nav a:hover {
+    color: #948f8f; /* Schriftfarbe ändert sich beim Überfahren mit der Maus */
+}
+
+/* Stil für den aktiven Navigationslink */
+nav a[aria-current="page"] {
+    font-weight: bold; /* Fetter Schriftstil für den aktiven Navigationslink */
+}
+
+/* Stil für den Kontakt-Artikel */
+/* Hintergrund des Kontakt-Artikels */
+article {
+    max-width: 800px; /* Maximale Breite des Kontakt-Artikels */
+    margin: 20px auto; /* Abstand oben und unten, um den Inhalt zentriert anzuzeigen */
+    padding: 20px; /* Innenabstand des Kontakt-Artikels */
+    background-color: white; /* Hintergrundfarbe des Kontakt-Artikels */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Schatten-Effekt für den Kontakt-Artikel */
+}
+
+/* Stil für die Kontakt-Artikel-Tabelle */
+article dl {
+    display: grid; /* Verwendung des Grid-Layouts für die Tabelle */
+    grid-template-columns: auto 1fr; /* Aufteilung der Spalten in der Tabelle */
+    gap: 10px; /* Abstand zwischen den Elementen in der Tabelle */
+}
+
+/* Stil für die Definition (dt) in der Kontakt-Artikel-Tabelle */
+article dt {
+    font-weight: bold; /* Fetter Schriftstil für die Definitionen in der Tabelle */
+}
+
+/* Stil für die Beschreibung (dd) in der Kontakt-Artikel-Tabelle */
+article dd {
+    margin-left: 0; /* Linker Abstand für die Beschreibungen in der Tabelle */
+}
+
+/* Stil für den Aside-Bereich im Kontakt */
+/* Hintergrund des Aside-Bereichs im Kontakt */
+aside {
+    max-width: 800px; /* Maximale Breite des Aside-Bereichs im Kontakt */
+    margin: 20px auto; /* Abstand oben und unten, um den Inhalt zentriert anzuzeigen */
+    padding: 20px; /* Innenabstand des Aside-Bereichs im Kontakt */
+    background-color: white; /* Hintergrundfarbe des Aside-Bereichs im Kontakt */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Schatten-Effekt für den Aside-Bereich im Kontakt */
+}
+
+/* Stil für die Überschrift (h2) im Aside-Bereich im Kontakt */
+aside h2 {
+    text-align: center; /* Textausrichtung in der Mitte für h2-Überschriften im Aside-Bereich im Kontakt */
+}
+
+/* Stil für Daten im Aside-Bereich im Kontakt */
+aside span {
+    height: 15em; /* Höhe des Elements im Aside-Bereich im Kontakt */
+    display: grid; /* Verwendung des Grid-Layouts */
+    grid-template-columns: auto 1fr; /* Aufteilung der Spalten im Grid-Layout */
+    gap: 10px; /* Abstand zwischen den Elementen im Grid */
+}
+
+/* Stil für den Footer-Bereich */
+footer {
+    background-color: #515151; /* Hintergrundfarbe des Footer-Bereichs */
+    color: white; /* Schriftfarbe im Footer-Bereich */
+    padding: 10px; /* Innenabstand im Footer-Bereich */
+    text-align: center; /* Textausrichtung in der Mitte im Footer-Bereich */
+}
+
+/* Stil für Elemente mit IDs */
+/* Stil für den Text "Willkommen bei der Schreinerei Meier" im Index */
+#willkomenstext {
+    padding: 0 3em; /* Innenabstand für den Text im Index */
+    text-align: center; /* Textausrichtung in der Mitte */
+    font-size: 1em; /* Schriftgröße */
+    font-weight: normal; /* Normaler Schriftstil */
+    margin-bottom: 1em; /* Abstand nach unten */
+}
+
+/* Stil für Texte mit der Klasse "geschichte-text" im Index */
+.geschichte-text {
+    padding: 0 2em; /* Innenabstand für Texte mit der Klasse "geschichte-text" */
+    text-align: center; /* Textausrichtung in der Mitte */
+    font-size: 1em; /* Schriftgröße */
+    font-weight: normal; /* Normaler Schriftstil */
+    margin-bottom: 1em; /* Abstand nach unten */
+}
+
+/* Stil für den Kontaktbereich */
+/* Stil für soziale Medien im Kontaktbereich */
+#soziale-medien {
+    display: flex; /* Verwendung des Flexbox-Layouts für soziale Medien */
+    align-items: center; /* Mittige Ausrichtung der Elemente */
+    justify-content: space-evenly; /* Gleichmäßige Verteilung des verfügbaren Platzes */
+    flex-direction: row; /* Anordnung der Elemente in einer Zeile */
+}
+
+/* Stil für Links mit der ID "sozial" im Kontaktbereich */
+#sozial > a {
+    margin: 0 0.5em; /* Abstand zwischen den sozialen Medien-Links */
+}
+
+.bilder-flex {
+    display: flex;
+    margin: 1em; /* Abstand nach unten */
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: space-evenly;
+    align-items: baseline;
+    justify-content: space-around;
+}
+
+.bild {
+    margin: 2em;
+    padding: 2em;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Box shadow effect */
+    border-radius: 20px;
+}
+
+.bild-beschreibung {
+    max-width: 250px;
+  
+}
+
+.bilder {
+    width: 250px;
+    height: 250px;
+}
+
+.produkt-vorschau {
+    display: flex;
+    margin: 1em;
+    flex-direction: row;
+}
+
+.beschreibung {
+    padding: 5px 2em 5px 2em;
+}
+
+.preis {
+    font-size: 1.6em;
+    font-weight: 700;
+    
+}
+
+.preis-stunde {
+    margin-left: 8px;
+    margin-right: 8px;
+    font-size: 1.2em;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.preis-vorschau {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.preis-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: end;
+}
+
+.card-div {
+    margin: 10px 10px 10px 10px;
+    width: 30%;
+}
+
+
+.shop-cart {
+    width: 100%;
+    margin: 10px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.card-button {
+    border: none;
+    border-radius: 5px;
+    height: 3em;
+    width: 100%;
+}
+
+.card-button:hover {
+    cursor: url("../img/cursor/cash.ico"), auto;
+}
+
+#paypal {
+    background-color: #ffc439;
+    color: #333;
+    font-weight: 800;
+    font-style: bold;
+}
+
+#paypal:active{
+    background-color: #ffdb6b;
+}
+
+.card-button:active {
+    background-color: #858585;
+}
+
+/* Mediaquery für Design an bestimmten größen (mindestens 30em Breite) */
+@media (min-width: 30em) {
+    #leistungen {
+        display: grid; /* Verwendung des Grid-Layouts für den Leistungsabschnitt */
+        grid-template-columns: 1fr 12em; /* Aufteilung der Spalten im Grid-Layout */
+    }
+
+    /* Stil für die Überschrift (h2) auf einem breiten Bildschirm */
+    #leistungen h2 {
+        grid-column: 1 / -1; /* Die Überschrift erstreckt sich über alle Spalten */
+    }
+}

@@ -1,0 +1,92 @@
+<!doctype html>
+<!-- Das ist die Deklaration des Dokumenttyps und markiert den Anfang des HTML-Dokuments. -->
+<html lang="de">
+<!-- Das <html> Tag umschließt den gesamten HTML-Inhalt und gibt die Sprache des Dokuments an. -->
+<head>
+    <!-- Der <head> Bereich enthält Metadaten, die nicht auf der Webseite angezeigt werden. -->
+    <meta charset="utf-8">
+    <!-- Der <meta> tag gibt die codierung an, in diesem Beispiel UTF 8. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Dieses <meta> Tag gibt die Ansichtsgröße für verschiedene Geräte an. -->
+    <title>Schreinerei Meier, Dingenskirchen</title>
+    <!-- Das <title> Tag setzt den Titel der Webseite, der im Browser-Tab angezeigt wird. -->
+    <link rel="stylesheet" href="css/better.css">
+    <!-- Der <link> Tag verweist auf eine externe CSS-Datei, um das Design der Webseite festzulegen. Über "href" wird der Pfad bestimmt. -->
+    <link rel="icon" type="image/x-icon" href="./favicon.svg">
+    <!-- Dieser <link> Tag verweist auf das Favicon für die Webseite. -->
+</head>
+<body>
+<!-- Der <body> Bereich enthält den sichtbaren Inhalt der Webseite. -->
+<header>
+    <!-- Der <header> Tag umschließt den oberen Teil der Webseite, enthält oft ein Logo und eine Überschrift. -->
+    <a id="backlink" href="/"><img src="./favicon.svg" alt="logo" width="100px" height="100px"></a>
+    <!-- Das <a> Tag erstellt einen Link zum Start der Webseite und enthält ein Bildlogo. -->
+    <p>DH-Campus</p>
+    <!-- Der <p> Tag (Englisch.: "Paragraf") ist ein tag zum nutzen von Ansätzen -->
+    <p>Mieträume Gut und Günstig</p>
+    <!-- Dieser <p> Tag enthält einen Slogan der Schreiner Meier -->
+</header>
+<nav>
+    <!-- Der <nav> Tag umschließt den Navigationsbereich der Webseite. -->
+    <ul>
+        <!-- Das <ul> Tag erstellt eine ungeordnete Liste von Navigationslinks. -->
+        <li><a tabindex="0" aria-current="page">Startseite</a></li>
+        <!-- Das <li> Tag definiert einzelne Listenelemente. Das <a> Tag erstellt die Links. -->
+        <li><a href="inhalt.html">Bilder von unseren Produkten</a></li>
+        <li><a href="kontakt.html">Kontakt und Impressum</a></li>
+    </ul>
+</nav>
+<div class="page">
+    <!-- Der <div> Tag wird oft verwendet, um einen Abschnitt mit individuellem Styling oder JavaScript-Verhalten zu definieren. (Ich nenne es auch oft einen Leeren Container zum Anpassen - Arthur) -->
+    <h1>Willkommen bei DH-Campus!</h1>
+    <!-- Das <h1> Tag stellt die Hauptüberschrift für die Webseite dar. -->
+    <p id="willkomenstext">Hier finden Sie nicht nur Räume, sondern eine lebendige Gemeinschaft für Ihr Unternehmen. 20 Jahre Erfahrung in Diepholz, in denen Erfolg und Innovation zu Hause sind. Wir freuen uns darauf, Teil Ihrer Erfolgsgeschichte zu werden!</p>
+    <!-- Dieser <p> Tag enthält allgemeinen Text, der Informationen zur Webseite liefert. Es hat die ID "willkomenstext" für CSS-Styling-Zwecke. -->
+    <section id="leistungen">
+        <!-- Das <section> Tag definiert einen thematischen Abschnitt der Webseite und hat die ID "leistungen". -->
+        <h2>Unsere Leistungen:</h2>
+        <!-- Das <h2> Tag stellt eine Unterüberschrift für den Abschnitt dar. -->
+        <ul>
+            <!-- Das <ul> Tag erstellt eine ungeordnete Liste. -->
+            <li>Diepholz
+                <!-- Das <li> Tag definiert ein Listenelement -->
+                <ul>
+                    <!-- Das <ul> Tag erstellt eine Unterliste von Listenelementen. -->
+                    <li><a href="./inhalt.html#räume">Prinzhorn-Raum</a></li>
+                    <li><a href="./inhalt.html#stuhl">Schlesier-Raum</a></li>
+                    <li><a href="./inhalt.html#meeting1">Schul-Raum</a></li>
+                    <li><a href="./inhalt.html#meeting2">Weser-Raum</a></li>
+                </ul>
+            </li>
+            <li>Sulingen</li>
+            <li>Barnstorf</li>
+            <li>Lembruch</li>
+        </ul>
+        <aside id="angebot">
+            <!-- Das <aside> Tag definiert einen Abschnitt, der nicht zur Hauptinhaltsstruktur gehört und hat die ID "angebot". Es wird oft für neben Informationen genutzt -->
+            <h3>Wichtige Info</h3>
+            <p>Die Standorte Sulingen, Barnstorf und Lembruch stehen unter Bau!</p>
+        </aside>
+    </section>
+    <section>
+        <h2>Unsere Geschichte:</h2>
+        <p class="geschichte-text">20 Jahre DH-Campus: Gemeinsam Wachsen, Gemeinsam Erfolgreich</p>
+        <p class="geschichte-text">Vor 20 Jahren wagte die DH-Campus den mutigen Schritt, Räume im wunderschönen Diepholz anzubieten, um anderen Unternehmen eine innovative und inspirierende Umgebung zu bieten. Seitdem hat sich viel verändert, aber eines ist konstant geblieben: die Leidenschaft der DH-Campus, Unternehmen zu fördern und zu sehen, wie sie gedeihen.</p>
+        <p class="geschichte-text">Die Geschichte der DH-Campus ist geprägt von Partnerschaften, Wachstum und gemeinsamem Erfolg. In den ersten Jahren war es nicht immer einfach, aber die Entschlossenheit, qualitativ hochwertige Räume und Dienstleistungen anzubieten, zahlte sich aus. Die DH-Campus wurde schnell zu einer Anlaufstelle für Unternehmen, die nicht nur nach einem Ort zum Arbeiten suchten, sondern nach einem Ort, an dem Ideen blühen und Innovationen gedeihen konnten.</p>  
+        <p class="geschichte-text">Im Laufe der Jahre hat die DH-Campus nicht nur ihre Räumlichkeiten erweitert, sondern auch ihre Dienstleistungen verbessert, um den sich ständig ändernden Anforderungen der Geschäftswelt gerecht zu werden. Von modernen Büros über hochmoderne Konferenzräume bis hin zu gemeinschaftlichen Arbeitsbereichen - die DH-Campus bietet eine vielfältige Palette von Optionen, die den unterschiedlichsten Bedürfnissen gerecht werden.</p>
+        <p class="geschichte-text">Das Herzstück der DH-Campus-Erfahrung ist jedoch die Gemeinschaft. Unternehmen, die sich für die DH-Campus entscheiden, treten einer lebendigen und engagierten Community bei. Networking-Veranstaltungen, Workshops und gemeinsame Projekte schaffen eine Atmosphäre der Zusammenarbeit und des Wachstums. Unternehmen, die sich hier niederlassen, profitieren nicht nur von erstklassigen Räumlichkeiten, sondern auch von wertvollen Beziehungen zu anderen Unternehmen.</p>
+        <p class="geschichte-text">Ein wichtiger Meilenstein in der Geschichte der DH-Campus war die Entscheidung, auf Nachhaltigkeit zu setzen. Die Räume sind nicht nur modern und funktional, sondern auch umweltfreundlich gestaltet. Von energiesparender Beleuchtung bis hin zu Recycling-Initiativen trägt die DH-Campus aktiv zum Umweltschutz bei und inspiriert ihre Mieter, dasselbe zu tun.</p>
+        <p class="geschichte-text">Die Erfolgsgeschichten der Unternehmen, die die Räumlichkeiten der DH-Campus nutzen, sind zahlreich. Von Start-ups, die zu Branchenführern wurden, bis hin zu etablierten Unternehmen, die in einem neuen Umfeld aufblühten - die DH-Campus ist stolz darauf, ein Teil dieser Reise zu sein.</p>
+        <p class="geschichte-text">Die Zukunft sieht für die DH-Campus genauso aufregend aus wie die vergangenen 20 Jahre. Mit dem festen Glauben an Gemeinschaft, Innovation und Nachhaltigkeit wird die DH-Campus weiterhin Unternehmen dabei unterstützen, ihre Ziele zu erreichen und gemeinsam zu wachsen. Hier, in Diepholz, wo die Geschichte begann und wo die Zukunft geschrieben wird, bleibt die DH-Campus die erste Wahl für Unternehmen, die mehr als nur einen Raum suchen - sie suchen eine Heimat für ihren Erfolg.</p>
+       </section>
+</div>
+<footer>
+    <!-- Der <footer> Tag markiert das Ende der Webseite und enthält oft Informationen, die am Ende der Seite erscheinen. -->
+    <hr>
+    <!-- Das <hr> Tag erstellt eine horizontale Trennlinie. -->
+    <p>Copyright
+        &copy; Arthur Ditte </p>
+</footer>
+</body>
+</html>
+
