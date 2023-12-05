@@ -10,10 +10,48 @@
         <title>Schreinerei Meier, Bildergalerie</title>
       <!-- CSS -->
         <link rel="stylesheet" href="css/better.css">
+      <!-- JavaScript -->
+        <script src="js/like.js"></script>
+        <script src="js/search.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <script>
+          $(document).ready(function () {
+            $('.bild').each(function () {
+                var id = $(this).attr('id');
+                console.log(id);
+              });
+
+            $(".searchInput").on("keyup", function()
+              {
+                console.log("keyup");
+                var text = $(this).val().ToLowerCase;
+                console.log(text);
+                $(".bild").each(function()
+                  {
+                    console.log("each function");
+                    if($(this).attr('id').indexOf(text) > -1)
+                    {
+                      console.log(this)
+                      $(this).show();
+                    }
+                    else
+                    {
+                      console.log(this)
+                      $(this).hide();
+                    }
+                  }
+                )
+              }
+            )  
+          });
+
+
+        </script>
       <!-- Favicom -->
         <link rel="icon" type="image/x-icon" href="./favicon.svg">
   </head>
-  <body>
+  <body onload="heart();">
     <!-- Header / Kopfzeile -->
     <header>
       <!-- Der <header> Tag umschließt den oberen Teil der Webseite, enthält oft ein Logo und eine Überschrift. -->
@@ -42,9 +80,17 @@
         <!-- Überschrift Produkt Auswahl ende -->
         <!-- Informations Text Überblick Produkte -->
         <p>Hier sehen Sie einen Überblick über unsere Angebote.</p>
+
+        <div class="suche">
+          <input id="such-textfield" type="text" class="searchInput" placeholder="Suche nach einem Raum Namen">
+          <button id="such-button" onclick="searchArticles()">Suchen</button>
+        </div>
+
         <!-- Informations Text Überblick Produkte ende -->
         <!-- Bilder -->
+
         <div class="bilder-flex">
+
           <div class="bild" id="räume">
             <!-- Räume -->
             <img src="img/räume/pc.jpeg" alt="PC Raum" width="250px" height="250px">

@@ -309,6 +309,37 @@ footer {
     background-color: #858585;
 }
 
+.suche {
+    height: 2em;
+    width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-content: space-evenly;
+        align-items: baseline;
+        justify-content: center;
+    
+}
+
+#such-textfield {
+    width: 60%;
+    height: 2em;
+    left: 0;
+}
+
+#such-button {
+    width: 30%;
+    height: 2em;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    right: 0;
+}
+
+#such-button:hover {
+    cursor: url("../img/cursor/search.ico"), auto;
+}
+
 /* Mediaquery für Design an bestimmten größen (mindestens 30em Breite) */
 @media (min-width: 30em) {
     #leistungen {
