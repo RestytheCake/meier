@@ -1,52 +1,50 @@
 <!doctype html>
  <html lang="de">
-    <!-- Path: inhalt.html -->
   <head>
-      <!-- UTF 8 -->
         <meta charset="utf-8">
-      <!-- responsive -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <!-- Titel -->
         <title>Schreinerei Meier, Bildergalerie</title>
-      <!-- CSS -->
         <link rel="stylesheet" href="css/better.css">
-      <!-- JavaScript -->
         <script src="js/like.js"></script>
         <script src="js/search.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
+        
+
         <script>
           $(document).ready(function () {
-            $('.bild').each(function () {
+            function getIdsFromClass(className) {
+              var ids = [];
+              $('.' + className).each(function () {
                 var id = $(this).attr('id');
-                console.log(id);
+                if (id) {
+                  ids.push(id);
+                }
               });
+              return ids;
+            }
 
-            $(".searchInput").on("keyup", function()
-              {
-                console.log("keyup");
-                var text = $(this).val().ToLowerCase;
-                console.log(text);
-                $(".bild").each(function()
-                  {
-                    console.log("each function");
-                    if($(this).attr('id').indexOf(text) > -1)
-                    {
-                      console.log(this)
-                      $(this).show();
-                    }
-                    else
-                    {
-                      console.log(this)
-                      $(this).hide();
-                    }
-                  }
-                )
+          function updateVisibility(searchText) {
+            // Such klasse Bild
+            var allIds = getIdsFromClass('bild');
+            allIds.forEach(function (id) {
+              var element = $('#' + id);
+              if (id.includes(searchText)) {
+                element.show();
+              } else {
+                element.hide();
               }
-            )  
-          });
+            });
+          }
 
+        // Input event listener
+        $('#such-textfield').on('input', function () {
+          var searchText = $(this).val();
+          updateVisibility(searchText);
+        }); 
 
+        // Initial visibility update
+        updateVisibility('');
         </script>
       <!-- Favicom -->
         <link rel="icon" type="image/x-icon" href="./favicon.svg">
@@ -82,8 +80,7 @@
         <p>Hier sehen Sie einen Überblick über unsere Angebote.</p>
 
         <div class="suche">
-          <input id="such-textfield" type="text" class="searchInput" placeholder="Suche nach einem Raum Namen">
-          <button id="such-button" onclick="searchArticles()">Suchen</button>
+          <input type="text" class="suche" id="such-textfield" placeholder="Suche nach einem Raum Namen">
         </div>
 
         <!-- Informations Text Überblick Produkte ende -->
@@ -91,7 +88,7 @@
 
         <div class="bilder-flex">
 
-          <div class="bild" id="räume">
+          <div class="bild" id="prinzhorn-raum">
             <!-- Räume -->
             <img src="img/räume/pc.jpeg" alt="PC Raum" width="250px" height="250px">
             <h2>Prinzhorn-Raum</h2>
@@ -105,7 +102,7 @@
           </div>
 
           <!-- Stuhl -->
-          <div class="bild" id="stuhl">
+          <div class="bild" id="schlesier-raum">
             <img src="img/räume/stuhl.jpeg" alt="Stuhl Raum" width="250px" height="250px">
             <h2>Schlesier-Raum</h2>
                         <p>Unser Raum in der Schlesierstraße</p>
@@ -118,7 +115,7 @@
           </div>
 
           <!-- Meeting 1 -->
-          <div class="bild" id="meeting1">
+          <div class="bild" id="weser-raum">
             <img class="bilder" src="img/räume/Meeting.1.JPG" alt="Meeting Raum 1" width="250px" height="250px">
             <h2>Weser-Raum</h2>
                         <p>Unser Raum in der Weserstraße</p>
@@ -131,7 +128,7 @@
           </div>
 
           <!-- Meeting 2 -->
-          <div class="bild" id="meeting2">
+          <div class="bild" id="mschul-raum">
             <img class="bilder" src="img/räume/Meeting.2.JPG" alt="Meeting Raum 2" width="250px" height="250px">
             <div class="bild-beschreibung">
               <h2>Schul-Raum</h2>
