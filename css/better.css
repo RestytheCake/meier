@@ -379,6 +379,29 @@ footer {
     flex-wrap: nowrap;
 }
 
+.support {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: start;
+    flex-direction: row;
+}
+
+.time {
+    width: 50%;
+}
+
+.send-email {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.send-email > * {
+    margin: 3.5px 0 3px 0;
+}
+
 /* Mediaquery für Design an bestimmten größen (mindestens 30em Breite) */
 @media (min-width: 30em) {
     #leistungen {
