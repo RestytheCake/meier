@@ -9,6 +9,49 @@
         <script src="js/search.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
+        
+
+        <script>
+          $(document).ready(function () {
+
+
+            function getIdsFromClass(className) {
+              var ids = [];
+              $('.' + className).each(function () {
+                var id = $(this).attr('id');
+                if (id) {
+                  ids.push(id);
+                }
+              });
+              return ids;
+            }
+          
+            function updateVisibility(searchText) {
+              // Such klasse Bild
+              var allIds = getIdsFromClass('bild');
+              allIds.forEach(function (id) {
+                var element = $('#' + id);
+                if (id.includes(searchText)) {
+                  element.show();
+                } else {
+                  element.hide();
+                }
+              });
+            }
+
+        
+            // Input event listener
+            $('#such-textfield').on('input', function () {
+              var searchText = $(this).val();
+              updateVisibility(searchText);
+            }); 
+
+            // Initial visibility update
+            updateVisibility('');
+
+
+          });
+        </script>
       <!-- Favicom -->
         <link rel="icon" type="image/x-icon" href="./favicon.svg">
   </head>
@@ -27,9 +70,9 @@
     <!-- Navigation -->
         <nav>
           <ul>
-            <li><a href="index.html">Startseite</a></li>
-            <li><a tabindex="0" aria-current="page">Bilder von unseren Produkten</a></li>
-            <li><a href="kontakt.html">Kontakt und Impressum</a></li>
+            <li><a href="./index.html">Startseite</a></li>
+            <li><a href="./inhalt.html">Bilder von unseren Produkten</a></li>
+            <li><a href="./kontakt.html">Kontakt und Impressum</a></li>
             <li><a href="./profil.html">Mein Profil</a></li>
           </ul>
         </nav>
@@ -38,7 +81,14 @@
     <!-- Page Div -->
     <div class="page">
         <!-- Überschrift Produkt Auswahl -->
-        <h1>Unsere Produkte</h1>
+        <h1>Alle Räume</h1>
+
+        <div class="suche">
+          <input type="text" class="suche" id="such-textfield" placeholder="Suche nach einem Raum Namen">
+        </div>
+
+        <!-- Informations Text Überblick Produkte ende -->
+        <!-- Bilder -->
 
         <div class="bilder-flex">
 
@@ -46,13 +96,19 @@
             <!-- Räume -->
             <img src="img/räume/pc.jpeg" alt="PC Raum" width="250px" height="250px">
             <h2>Prinzhorn-Raum</h2>
+              <div style="margin: 10px 5px 5px 5px">
+                <p style="margin: 0 0 5 0;">Diepholz</p>
+                <hr style="margin: 0; padding: 0">
+              </div>
                         <p>Prinzhornstraße</p>
-                        <div class="price">54€</div>
-                        <div class="rating">
-                            <div class="stars">⭐⭐⭐⭐⭐</div>
-                            <div class="favorite" id="title2" onclick="heart('title2')">❤</div>
+                         
+                        
+                          
+                        <div class="card-bottom">
+                          <div class="price">54€</div>
+                          <a href="./inhalt/Prinzhorn-Raum.html" class="cta">Öffnen</a>
                         </div>
-                        <a href="./inhalt/Prinzhorn-Raum.html" class="cta">Öffnen</a>
+                        
           </div>
 
           <!-- Stuhl -->
@@ -94,30 +150,9 @@
               </div>
               <a href="./inhalt/Schul-Raum.html" class="cta">Öffnen</a>
             </div>
-            
           </div>
-        
-      </div>
-
-      <div id="alle">
-        <a href="./räume.html">Alle Räume Anzeigen</a>
-      </div>
-        <!-- Bilder ende -->
-
-        <div>
-          <h2>Kurz Video</h2>
-          <video controls width="100%">
-            <source src="./video/room.MOV" type="video/mp4" />
-            Your browser does not support the video tag.
-            Download the
-            <a href="./video/room.MOV">room.mov</a>
-            video.
-          </video>
-        </div>
-        
+      </div>  
     </div>
-
-
 
     <!-- Footer / Fußzeile-->
        <footer>

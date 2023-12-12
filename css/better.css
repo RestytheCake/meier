@@ -53,7 +53,7 @@ header p:first-of-type {
 
 /* Stil für den letzten Text im Header */
 header p:last-of-type {
-    transform: rotate(8deg); /* Rotation des Texts um 8 Grad */
+    transform: rotate(6deg); /* Rotation des Texts um 8 Grad */
     border: thin solid; /* Dünner Rahmen um den Text */
     padding: 0.5em; /* Innenabstand für den Text */
     border-radius: 0.2em; /* Abrundung der Ecken */
@@ -82,6 +82,8 @@ header p {
 nav {
     background-color: #eee; /* Hintergrundfarbe des Navigationsbereichs */
     padding: 10px; /* Innenabstand im Navigationsbereich */
+    /* position: sticky; 
+    top: 0; */
 }
 
 /* Stil für die Navigationsliste */
@@ -330,6 +332,51 @@ footer {
 
 #such-button:hover {
     cursor: url("../img/cursor/search.ico"), auto;
+}
+
+.profile-start {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.profil-img {
+    width: 200px;
+    height: 250px;
+    border-radius: 55%;
+}
+
+.profile-des {
+    margin-left: 15px;
+}
+
+.profile-name {
+    font-size: 2em;
+    font-weight: 700;
+    font-style: bold;
+}
+
+.profile-bes {
+    font-size: 1em;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#alle {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: end;
+    flex-wrap: nowrap;
+    margin-bottom: 2em;
+}
+
+.card-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
 }
 
 /* Mediaquery für Design an bestimmten größen (mindestens 30em Breite) */
