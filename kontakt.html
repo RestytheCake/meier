@@ -13,23 +13,35 @@
     <!-- Favicom -->
         <link rel="icon" type="image/x-icon" href="./favicon.svg">
 
-    <script>
-        $(document).ready(function () {
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <script>
+            function newid () {
+                return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,
+                    function(c) {
+                    var r = Math.random() * 16 | 0,
+                        v = c == 'x' ? r : (r & 0x3 | 0x8);
+                    return v.toString(16);
+                    }).toUpperCase();
+                    }
+        </script>
+
+        <script>
 
             function send_email() {
-                var message = $("#support-message").val()
-                var email = $("#support-email").val()
-                var name = $("#support-name").val()
+                var message = $("#support-message").val();
+                var email = $("#support-email").val();
+                var name = $("#support-name").val();
+                var id = newid();
+                const list = [name, email, message]
 
-                const list = {"name": name, "email": email, "message": message}
-
-                localStorage.setItem("Message", list);
-                var alertt = localStorage.getItem("Message");
+                console.log(list);
+                localStorage.setItem(id, list);
+                var alertt = localStorage.getItem(id);
                 alert(alertt);
-                return(alertt);
             }
-        },
-    </script>
+
+        </script>
 </head>
 <body>
     <!-- Header / Kopfzeile -->
@@ -121,18 +133,7 @@
 			</span>
             <!-- Soziale Medien -->
             <hr>
-            <div id="soziale-medien">
-
-                <p>Soziale Medien: </p>
-                <!-- Soziale-Medien-Icons -->
-                <div id="sozial">
-                    <a href="./medien/facebook.html"><img height="32" width="32" src="img/social-media/facebook.svg" alt="Facebook"></a>
-                    <a href="./medien/twitter.html"><img height="32" width="32" src="img/social-media/twitter.svg" alt="Twitter"></a>
-                    <a href="./medien/instagram.html"><img height="32" width="32" src="img/social-media/instagram.svg" alt="Instagram"></a>
-                    <a href="./medien/youtube.html"><img height="32" width="32" src="img/social-media/youtube.svg" alt="YouTube"></a>
-                    <a href="./medien/whatsapp.html"><img height="32" width="32" src="img/social-media/whatsapp.svg" alt="Whatsapp"></a>
-                </div>
-            </div>
+            
         </aside>
 
         <aside>
@@ -163,8 +164,27 @@
 
     <!-- Footer / Fußzeile -->
     <footer>
-        <hr>
-        <p>&copy; Arthur Ditte</p>
+        <div id="soziale-medien">
+            <p>&copy; Arthur Ditte</p>
+            <hr style="width: auto;
+                        height: 15px;
+                        margin: 0;
+                        padding: 0;">
+            <div>
+
+                <p>Soziale Medien: </p>
+                <!-- Soziale-Medien-Icons -->
+                <div id="sozial">
+                    <a href="./medien/facebook.html"><img height="32" width="32" src="img/social-media/facebook.svg" alt="Facebook"></a>
+                    <a href="./medien/twitter.html"><img height="32" width="32" src="img/social-media/twitter.svg" alt="Twitter"></a>
+                    <a href="./medien/instagram.html"><img height="32" width="32" src="img/social-media/instagram.svg" alt="Instagram"></a>
+                    <a href="./medien/youtube.html"><img height="32" width="32" src="img/social-media/youtube.svg" alt="YouTube"></a>
+                    <a href="./medien/whatsapp.html"><img height="32" width="32" src="img/social-media/whatsapp.svg" alt="Whatsapp"></a>
+                </div>
+
+            </div>
+            
+        </div>
     </footer>
 </body>
 </html>

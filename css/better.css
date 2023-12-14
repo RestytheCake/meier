@@ -193,6 +193,7 @@ footer {
     align-items: center; /* Mittige Ausrichtung der Elemente */
     justify-content: space-evenly; /* Gleichmäßige Verteilung des verfügbaren Platzes */
     flex-direction: row; /* Anordnung der Elemente in einer Zeile */
+    flex-wrap: nowrap;
 }
 
 /* Stil für Links mit der ID "sozial" im Kontaktbereich */
@@ -341,7 +342,7 @@ footer {
     justify-content: space-evenly;
 }
 
-.profil-img {
+.profile-img {
     width: 200px;
     height: 250px;
     border-radius: 55%;
