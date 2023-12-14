@@ -51,14 +51,7 @@
 
     <script>
         $(document).ready(function () {
-            function setimg() {
-                let img = document.getElementById('profile-image');
-                console.log("setimg");
-            }
-
-            setimg();
-
-            document.getElementById('profil-img').addEventListener('change', (e) => {
+                document.getElementById('profil-img').addEventListener('change', (e) => {
                 const file = e.target.files[0];
                 const reader = new FileReader();
                 console.log("const reader");
