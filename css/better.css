@@ -378,6 +378,7 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: nowrap;
+    align-items: flex-end;
 }
 
 .support {
@@ -402,6 +403,37 @@ footer {
 .send-email > * {
     margin: 3.5px 0 3px 0;
 }
+
+.support-th-top {
+    margin: 1em;
+    font-size: 1.8em;
+    font-weight: 700;
+
+}
+
+.support-th {
+    margin: 1em;
+    font-size: 1.1em;
+    font-weight: 500;
+    font-style: normal;
+    padding: 3px 10px 3px 10px;
+}
+
+#table {
+    flex: 1
+}
+
+#table-top {
+    display: flex;
+}
+
+#table-body {
+    display: flex;
+}
+
+td {
+    border: 1px solid black;
+  }
 
 /* Mediaquery für Design an bestimmten größen (mindestens 30em Breite) */
 @media (min-width: 30em) {
