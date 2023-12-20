@@ -1,6 +1,6 @@
 function anfragen() {
     for (let [key, value] of Object.entries(localStorage)) {
-        if (key != "image") {
+        if (key != "image" || key != "lsl") {
 
             const array = value;
             const array2 = array.split(",");

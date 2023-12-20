@@ -340,12 +340,13 @@ footer {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    padding: 0 15px 15px 15px;
 }
 
 .profile-img {
     width: 200px;
     height: 250px;
-    border-radius: 55%;
+    border-radius: 25%;
 }
 
 .profile-des {
@@ -362,6 +363,14 @@ footer {
     font-size: 1em;
     font-weight: 400;
     font-style: normal;
+}
+
+.profile-end {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 30px 0 0 15px;
 }
 
 #alle {
