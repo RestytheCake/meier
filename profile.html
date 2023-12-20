@@ -3,24 +3,8 @@
 <html lang="de">
 <!-- Das <html> Tag umschließt den gesamten HTML-Inhalt und gibt die Sprache des Dokuments an. -->
 <head>
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        .page {
-            display: flex;
-            justify-content: space-between;
-        }
-        h1, h2, h3, h4 {
-            margin-bottom: 10px;
-        }
-        h2, h3 {
-            width: 48%; /* Setzt die Breite der Überschriften auf etwa 48% des Container, um Platz für beide zu schaffen */
-            box-sizing: border-box; /* Verhindert, dass Padding und Border die Breite beeinflussen */
-        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -89,7 +73,6 @@
     <h1>Profil</h1>
     
     <!-- Start -->
-    <section>
         <div class="profile-start">
             <div class="profile-des">
                 <p class="profile-name">Ihr Name</p>
@@ -139,11 +122,16 @@
             </tr>
             <!-- Weitere vergangene Buchungen einfügen -->
         </table>
-    </section>
+    
 
     <!-- Ende -->
-    <a style="height: auto; width: auto;" href="./einstellungen.html">Einstellungen</a>
-    <a href="./anfragen.html">Support Anfragen</a>
+    <hr style="">
+    <div class="profile-end">
+        <a style="height: auto; width: auto;" href="./einstellungen.html">Einstellungen</a>
+        <a href="./anfragen.html">Support Anfragen</a>
+        <a href="./index.html" onclick="reset()">Account Löschen</a>
+    </div>
+    
 </div>
 <footer>
     <!-- Der <footer> Tag markiert das Ende der Webseite und enthält oft Informationen, die am Ende der Seite erscheinen. -->
