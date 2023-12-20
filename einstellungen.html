@@ -8,9 +8,10 @@
     <!-- Der <meta> tag gibt die codierung an, in diesem Beispiel UTF 8. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Dieses <meta> Tag gibt die Ansichtsgröße für verschiedene Geräte an. -->
-    <title>Schreinerei Meier, Dingenskirchen</title>
+    <title>DH.Campus, Einstellungen</title>
     <!-- Das <title> Tag setzt den Titel der Webseite, der im Browser-Tab angezeigt wird. -->
     <link rel="stylesheet" href="css/better.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- Der <link> Tag verweist auf eine externe CSS-Datei, um das Design der Webseite festzulegen. Über "href" wird der Pfad bestimmt. -->
     <link rel="icon" type="image/x-icon" href="./favicon.svg">
     <!-- Dieser <link> Tag verweist auf das Favicon für die Webseite. -->
@@ -44,9 +45,17 @@
 
 
         });
+
+        function set_profile() {
+            console.log("")
+            const image = localStorage.getItem("image");
+            if (image != null) {
+                $(".profile-img").attr("src", 'data:image/png;base64,' + image);
+            }
+        }
     </script>
 </head>
-<body>
+<body onload="set_profile()">
 <!-- Der <body> Bereich enthält den sichtbaren Inhalt der Webseite. -->
 <header>
     <!-- Der <header> Tag umschließt den oberen Teil der Webseite, enthält oft ein Logo und eine Überschrift. -->
