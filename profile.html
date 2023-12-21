@@ -45,6 +45,22 @@
             }
         }
     </script>
+    <script>
+        function erase() {
+            if (confirm("Möchten Sie wirklich Ihre Daten löschen ?\nAlle gespeicherten Informationen werden gelöscht.")) {
+                localStorage.clear();
+                alert("Sie haben Alle Daten gelöscht")
+                console.log("if")
+                setTimeout(function(){
+                    console.log("timeout")
+
+                }, 2000);
+            } else {
+                console.log("else")
+            }
+        }
+        
+    </script>
 </head>
 <body onload="set_profile()">
 <!-- Der <body> Bereich enthält den sichtbaren Inhalt der Webseite. -->
@@ -135,7 +151,7 @@
     <div class="profile-end">
         <a style="height: auto; width: auto;" href="./einstellungen.html">Einstellungen</a>
         <a href="./anfragen.html">Support Anfragen</a>
-        <a href="./index.html" onclick="reset()">Account Löschen</a>
+        <a href="./index.html" onclick="erase()">Account Löschen</a>
     </div>
     
 </div>
