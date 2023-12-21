@@ -53,7 +53,7 @@
                 console.log("if")
                 setTimeout(function(){
                     console.log("timeout")
-
+                    window.location.replace("./index.html");
                 }, 2000);
             } else {
                 console.log("else")
@@ -151,7 +151,7 @@
     <div class="profile-end">
         <a style="height: auto; width: auto;" href="./einstellungen.html">Einstellungen</a>
         <a href="./anfragen.html">Support Anfragen</a>
-        <a href="./index.html" onclick="erase()">Account Löschen</a>
+        <a onclick="erase()">Account Löschen</a>
     </div>
     
 </div>
