@@ -33,18 +33,61 @@
                 var email = $("#support-email").val();
                 var name = $("#support-name").val();
                 var id = newid();
-                const list = [name, email, message]
+                if (message == "" || email == "" || name == "") {
+                    alert("Es dürfen keine felder leer gelassen werden!")
+                    return;
+                } 
+                else {
+                    if (check_name(name) == true && check_email(email) == true && check_message(message) == true) {
+                        const list = [name, email, message]
 
-                console.log(list);
-                localStorage.setItem(id, list);
+                        console.log(list);
+                        localStorage.setItem(id, list);
 
-                alert("Support Nachricht Gesichert")
-                
-                $("#support-message").val("");
-                $("#support-email").val("");
-                $("#support-name").val("");
-
+                        alert("Support Nachricht Gesichert")
+                        
+                        $("#support-message").val("");
+                        $("#support-email").val("");
+                        $("#support-name").val("");
+                    }
+                    else {
+                        return;
+                    }  
+                }
             }
+
+            function check_name(str) {
+                var name = String(str)
+                if (name.length < 2)  {
+                    alert("Der Name muss mindestens 2 Zeichen lang sein!")
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+
+            function check_email(str) {
+                const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (emailRegex.test(str) == true) {
+                    return true;
+                }
+                else {
+                    alert("Ungültige Email Adresse");
+                    return false;
+                }
+            }
+
+            function check_message(str) {
+                var message = String(str);
+                if (message.length < 10)  {
+                    alert("Die Nachricht muss mindestens 10 Zeichen lang sein!")
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }            
 
         </script>
 </head>
@@ -104,13 +147,12 @@
             <h3>Berufsspezifische Angaben:</h3>
             <!-- Ich habe den Artikelinhalt etwas geändert, um ihn aktueller und relevanter zu machen -->
             <p>Berufsbezeichnung: Vermieter</p>
-            <p>Zuständige Kammer: Handwerkskammer Niedersachsen</p>
+            <p>Zuständige Kammer: Kammer Niedersachsen</p>
             <p>Verliehen in/durch: Deutschland</p>
-            <p>Folgende berufsrechtliche Regelungen finden Anwendung: Handwerksordnung (HwO)<br>
-                Diese Regelungen können Sie einsehen unter: <a href="https://www.gesetze-im-internet.de/hwo/">https://www.gesetze-im-internet.de/hwo/</a></p>
             <p>Zuständige Aufsichtsbehörde: Finanzamt Sulingen</p>
-            <p>Register und Registernummer: Handwerksrolle 123456</p>
+            <p>Register und Registernummer: Vertriebsrolle 123456</p>
             <p>Umsatzsteuer-ID: DE 123456789</p>
+            <p>Wirtschaftssteuer-ID: 987654321 ED</p>
             <p>Verantwortlicher für journalistisch-redaktionelle Inhalte gem. § 55 II RstV:<br />Arthur Ditte</p>
             <hr>
             <p>Angaben gem. § 5 TMG</p>
@@ -156,12 +198,12 @@
             </div>
                 <div class="send-email">
                     <label for="name">Name:</label>
-                    <input type="text" id="support-name" name="name" required>
+                    <input type="text" id="support-name" name="name" required="required">
                     <label for="email">E-Mail:</label>
-                    <input type="email" id="support-email" name="email" required>
+                    <input type="email" id="support-email" name="email" required="required">
                     <label for="message">Nachricht:</label>
                     <textarea id="support-message" name="message" rows="5" required></textarea>
-                    <button type="submit" onclick="send_email()">Senden</button>
+                    <button type="submit" onclick="send_email()" required="required">Senden</button>
                 </div>
             </span>
         </aside>

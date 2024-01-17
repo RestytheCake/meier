@@ -3,24 +3,8 @@
 <html lang="de">
 <!-- Das <html> Tag umschließt den gesamten HTML-Inhalt und gibt die Sprache des Dokuments an. -->
 <head>
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        .page {
-            display: flex;
-            justify-content: space-between;
-        }
-        h1, h2, h3, h4 {
-            margin-bottom: 10px;
-        }
-        h2, h3 {
-            width: 48%; /* Setzt die Breite der Überschriften auf etwa 48% des Container, um Platz für beide zu schaffen */
-            box-sizing: border-box; /* Verhindert, dass Padding und Border die Breite beeinflussen */
-        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -61,6 +45,22 @@
             }
         }
     </script>
+    <script>
+        function erase() {
+            if (confirm("Möchten Sie wirklich Ihre Daten löschen ?\nAlle gespeicherten Informationen werden gelöscht.")) {
+                localStorage.clear();
+                alert("Sie haben Alle Daten gelöscht")
+                console.log("if")
+                setTimeout(function(){
+                    console.log("timeout")
+                    window.location.replace("./index.html");
+                }, 2000);
+            } else {
+                console.log("else")
+            }
+        }
+        
+    </script>
 </head>
 <body onload="set_profile()">
 <!-- Der <body> Bereich enthält den sichtbaren Inhalt der Webseite. -->
@@ -89,7 +89,6 @@
     <h1>Profil</h1>
     
     <!-- Start -->
-    <section>
         <div class="profile-start">
             <div class="profile-des">
                 <p class="profile-name">Ihr Name</p>
@@ -98,11 +97,17 @@
             <img class="profile-img" src="" alt="Profilbild">
         </div>
         <h2>Kontaktinformationen</h2>
+    
         <ul>
             <li>Email: beispiel@example.com</li>
             <li>Telefon: +49 123 456789</li>
             <!-- Füge weitere Kontaktinformationen hinzu, wie z.B. Soziale Medien, Skype, etc. -->
         </ul>
+
+        <h2>Warenkorb und Bestellungen</h2>
+
+        <h3>Ihr Warenkorb:</h3>
+        <img href="./img/profil/Einkaufswagen.png" style="width: 50px; height: 50px; color: black;">texyt</img>
 
         <h3>Bestellübersicht</h3>
         <table>
@@ -139,18 +144,39 @@
             </tr>
             <!-- Weitere vergangene Buchungen einfügen -->
         </table>
-    </section>
+    
 
     <!-- Ende -->
-    <a style="height: auto; width: auto;" href="./einstellungen.html">Einstellungen</a>
-    <a href="./anfragen.html">Support Anfragen</a>
+    <hr style="">
+    <div class="profile-end">
+        <a style="height: auto; width: auto;" href="./einstellungen.html">Einstellungen</a>
+        <a href="./anfragen.html">Support Anfragen</a>
+        <a onclick="erase()">Account Löschen</a>
+    </div>
+    
 </div>
 <footer>
-    <!-- Der <footer> Tag markiert das Ende der Webseite und enthält oft Informationen, die am Ende der Seite erscheinen. -->
-    <hr>
-    <!-- Das <hr> Tag erstellt eine horizontale Trennlinie. -->
-    <p>Copyright
-        &copy; Arthur Ditte </p>
+    <div id="soziale-medien">
+        <p>&copy; Arthur Ditte</p>
+        <hr style="width: auto;
+                    height: 15px;
+                    margin: 0;
+                    padding: 0;">
+        <div>
+
+            <p>Soziale Medien: </p>
+            <!-- Soziale-Medien-Icons -->
+            <div id="sozial">
+                <a href="./medien/facebook.html"><img height="32" width="32" src="img/social-media/facebook.svg" alt="Facebook"></a>
+                <a href="./medien/twitter.html"><img height="32" width="32" src="img/social-media/twitter.svg" alt="Twitter"></a>
+                <a href="./medien/instagram.html"><img height="32" width="32" src="img/social-media/instagram.svg" alt="Instagram"></a>
+                <a href="./medien/youtube.html"><img height="32" width="32" src="img/social-media/youtube.svg" alt="YouTube"></a>
+                <a href="./medien/whatsapp.html"><img height="32" width="32" src="img/social-media/whatsapp.svg" alt="Whatsapp"></a>
+            </div>
+
+        </div>
+        
+    </div>
 </footer>
 </body>
 </html>
