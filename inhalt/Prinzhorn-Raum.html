@@ -6,6 +6,15 @@
         <title>DH-Campus, Prinzhorn-Raum</title>
         <link rel="stylesheet" href="../css/better.css">
         <link rel="icon" type="image/x-icon" href="../favicon.svg">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <script>
+          function Warenkorb() { 
+            var card = document.getElementById("warenkorb");
+            var title = $("h1").text();
+            alert(title + "wurde zum Warenkorb hinzugefügt");
+          }
+        </script>
   </head>
   <body>
     <header>
@@ -50,7 +59,7 @@
               <div class="payment" style="height: 20%;">
                 <div class="row shop-cart">
                     <div class="card-div">
-                      <button class="card-button">Add to Card</button>
+                      <button onclick="Warenkorb()" id="warenkorb" class="card-button">Add to Card</button>
                     </div>
                     <div class="card-div">
                       <button class="card-button">Jetzt Kaufen</button>
