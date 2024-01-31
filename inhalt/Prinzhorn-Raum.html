@@ -9,9 +9,14 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
         <script>
-          function Warenkorb() { 
+          function addWarenkorb() { 
             var card = document.getElementById("warenkorb");
             var title = $("h1").text();
+            var preis = $(".preis").text();
+            var menge = 1;
+
+            const warenkorb = [title, preis, menge]
+            localStorage.setItem("warenkorb" + title, warenkorb);
             alert(title + "wurde zum Warenkorb hinzugefügt");
           }
         </script>
@@ -42,7 +47,7 @@
               <div class="details" style="height: 80%;">
                 <div class="preis-row"> 
                   <p class="preis-stunde">Preis:</p>
-                  <p class="preis">54€ </p>
+                  <p class="preis">54€</p>
                   <p class="preis-stunde"> / stunde</p>
                 </div>
                 <div class="row">
@@ -59,7 +64,7 @@
               <div class="payment" style="height: 20%;">
                 <div class="row shop-cart">
                     <div class="card-div">
-                      <button onclick="Warenkorb()" id="warenkorb" class="card-button">Add to Card</button>
+                      <button onclick="addWarenkorb()" id="warenkorb" class="card-button">Add to Card</button>
                     </div>
                     <div class="card-div">
                       <button class="card-button">Jetzt Kaufen</button>

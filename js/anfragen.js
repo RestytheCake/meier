@@ -32,3 +32,41 @@ function anfragen() {
         }
       }
 }
+
+function Warenkorb() {
+    for (let [key, value] of Object.entries(localStorage)) {
+        if (key.includes("warenkorb")) {
+
+            const array = value;
+            const array2 = array.split(",");
+
+            const no_support = document.getElementById("nocard");
+            no_support.hidden;
+            no_support.style.display = "none";
+
+            const list = document.getElementById("list");
+            const section = document.createElement("section");
+            const div = document.createElement("div");
+            div.id = array2[0];
+            div.className = "cart-item";
+
+            const title = document.createElement("h3");
+            title.textContent =  array2[0]
+            title.id = array2[0]
+
+            const Preis = document.createElement("p");
+            Preis.textContent =  "Preis: " + array2[1];
+
+            const Menge = document.createElement("p");
+            Menge.textContent =  "Menge: " + array2[2] + " Stunden"
+            
+            div.appendChild(title)
+            div.appendChild(Preis)
+            div.appendChild(Menge)
+            list.appendChild(div)
+        }
+        else {
+            
+        }
+      }
+}

@@ -444,6 +444,10 @@ td {
     border: 1px solid black;
   }
 
+.center {
+    text-align: center;
+}
+
 /* Mediaquery für Design an bestimmten größen (mindestens 30em Breite) */
 @media (min-width: 30em) {
     #leistungen {
