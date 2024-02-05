@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DH Campus</title>
+  <link rel="stylesheet" href="css/formate.css">
+  <style>
+    body {
+      margin: 0 50px;
+      font-family: 'Arial', sans-serif; /* Bessere Schriftart für Lesbarkeit */
+      background-color: #f4f4f4; /* Hintergrundfarbe für bessere Lesbarkeit */
+      color: #333; /* Textfarbe für bessere Lesbarkeit */
+    }
+
+    header {
+      background-color: #2c3e50; /* Header Hintergrundfarbe */
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    h1 {
+      color: #ecf0f1; /* Header Textfarbe */
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+    }
+
+    nav li {
+      margin: 0 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #ecf0f1; /* Navigationslinkfarbe */
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #3498db; /* Farbänderung bei Hover */
+    }
+
+    .row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    video {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    .row p {
+      width: 60%;
+      font-weight: bold; /* Fettschrift hinzufügen */
+      margin: 0 auto; /* Mittige Platzierung hinzufügen */
+    }
+
+    .row video {
+      width: 30%;
+      font-weight: bold; /* Fettschrift hinzufügen */
+      margin: 0 auto; /* Mittige Platzierung hinzufügen */
+    }
+
+    h2 {
+      font-weight: bold;
+      text-align: center;
+      border-bottom:3px solid #3498db; /* Border mit Farbe */
+      padding-bottom: 10px; /* Füllung für den unteren Rand */
+    } 
+
+
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px 0;
+      background-color: #34495e; /* Footer Hintergrundfarbe */
+      color: #ecf0f1; /* Footer Textfarbe */
+    }
+
+    hr {
+      border-color: #2c3e50; /* Farbe für Trennlinie */
+    }
+
+    footer a {
+      color: #ecf0f1;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      color: #3498db; /* Farbänderung bei Hover */
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>DH Campus - The Knowledge Room Broker</h1>
+    <nav>
+      <ul>
+        <li><a href="./"><img src="logo.png" height="70" width="70" alt="Logo"></a></li>
+        <li><a tabindex="0" aria-current="page">Startseite</a></li>
+        <li><a href="./Seminarräume.html">Seminarräume</a></li>
+        <li><a href="./Kontakt.html">Kontakt und Impressum</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <p>Willkommen bei DH Campus GmbH</p>
+  <p>Sie suchen nach modernen Seminarräumen, zentral gelegen in Diepholz?</p>
+  <p>Dann sind Sie hier genau richtig!</p>
+
+  <h2>Unsere Leistungen:</h2>
+  <div class="row">
+    <p style="width: 60%;">Wir von DH-Campus sind darauf spezialisiert, unseren Kunden die besten Seminarräume zu bieten. <br>
+      Da wir Ihnen das bestmögliche Erlebnis bieten wollen, sind unsere Räumlichkeiten nicht nur komfortabel und groß,<br> sondern auch mit viel Technik ausgestattet, sodass Sie diese vielseitig nutzen können.
+      <br>Darüber hinaus können Sie bei uns in den Pausen frisch gekochtes Essen genießen, dies bietet den Vorteil, <br>dass Sie sich nicht um eine Essensgelegenheit kümmern müssen.<br>
+      Wir arbeiten stetig daran, unsere Räume auf dem modernsten Stand zu halten, <br>weshalb derzeit nur ein Raum buchbar ist. <br>In einigen Wochen wird sich jedoch das Angebot von uns erhöhen und Sie können zwischen vielen verschiedenen Räumen wählen.
+    </p>
+    <video src="Video_Seminarraum.mp4" type="mp4/video" autoplay="autoplay" controls="controls"></video>
+  </div>
+
+  <h2>Unsere Geschichte:</h2>
+  <p>Wir sind ein junges Unternehmen aus der Stadt Diepholz. <br>Unsere Anfänge befinden sich im Jahr 2010, wo wir damit begannen, kleine Räumlichkeiten an Kunden zu vermieten.
+    <br>Mittlerweile konzentrieren wir uns darauf, unsere Räumlichkeiten<br> in Form von Seminarräumen bestmöglich anzubieten.
+    Wir arbeiten daran, Räume <br>mit verschiedenen Eigenschaften und Nutzungszwecken anzubieten. <br>Unser stetig wachsendes Unternehmen beschäftigt nun über 20 Mitarbeiter, welche ihr Bestes geben, um Ihnen einen möglichst guten Aufenthalt zu bieten.
+  </p>
+
+  <footer>
+    <hr>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="kontakt.html#impressum">Impressum</a>
+    <p>© 2023 by Linus und Justin</p>
+  </footer>
+</body>
+
+</html>
