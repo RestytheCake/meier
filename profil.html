@@ -31,6 +31,7 @@
     <link rel="icon" type="image/x-icon" href="./favicon.svg">
     <!-- Dieser <link> Tag verweist auf das Favicon für die Webseite. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
     <script>
         function set_profile() {
@@ -76,22 +77,37 @@
             }
         }
     </script>
-    <script>
-        function checkName() {
-            let name = document.cookie.split("=")[1];
-            if (name != null) {
-                $(".profile-name").text(name);
-            }
+     <script>
+        function loadbody() {
+            set_profile();
+            load();
         }
      </script>
      <script>
         function load() {
-            set_profile();
-            checkName();
+            var cname = $.cookie("name");
+            var cemail = $.cookie("email");
+            var ctel = $.cookie("tel");
+            if (cname != null) {
+                $(".profile-name").text(cname);
+            }
+            if (cemail != null) {
+                $("#email").text("E-mail: " + cemail);
+            }
+            if (ctel != null) {
+                $("#tel").text("Telefon: " + ctel);
+            }
+        }
+     </script>
+     <script>
+        function getCookie(name) {
+            function escape(s) { return s.replace(/([.*+?\^$(){}|\[\]\/\\])/g, '\\$1'); }
+            var match = document.cookie.match(RegExp('(?:^|;\\s*)' + escape(name) + '=([^;]*)'));
+            return match ? match[1] : null;
         }
      </script>
 </head>
-<body onload="load()">
+<body onload="loadbody()">
 <!-- Der <body> Bereich enthält den sichtbaren Inhalt der Webseite. -->
 <header>
     <!-- Der <header> Tag umschließt den oberen Teil der Webseite, enthält oft ein Logo und eine Überschrift. -->
@@ -128,8 +144,8 @@
         <h2>Kontaktinformationen</h2>
     
         <ul>
-            <li>Email: beispiel@example.com</li>
-            <li>Telefon: +49 123 456789</li>
+            <li id="email">Email: beispiel@example.com</li>
+            <li id="tel">Telefon: +49 123 456789</li>
             <!-- Füge weitere Kontaktinformationen hinzu, wie z.B. Soziale Medien, Skype, etc. -->
         </ul>
 

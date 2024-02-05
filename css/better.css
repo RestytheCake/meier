@@ -448,6 +448,10 @@ td {
     text-align: center;
 }
 
+.margin {
+    margin-top: 2em;
+}
+
 /* Mediaquery für Design an bestimmten größen (mindestens 30em Breite) */
 @media (min-width: 30em) {
     #leistungen {

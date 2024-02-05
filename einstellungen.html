@@ -59,8 +59,50 @@
             let name = document.getElementById('namefield').value;
             if (name != null) {
                 document.cookie = "name=" + name;
-                $(".profile-name").text(name);
+                $(".profil-name").text("Name ist jetzt: " + name);
             }
+        }
+
+        function setEmail() {
+            let email = document.getElementById('emailfield').value;
+            let email2 = check_email(email);
+            if (email2) {
+                document.cookie = "email=" + email;
+                $(".profil-email").text("Email ist jetzt: " + email);
+            }
+        }
+
+        function setTel() {
+            let tel = document.getElementById('telfield').value;
+            let tel2 = check_tel(tel);
+            if (tel2) {
+                document.cookie = "tel=" + tel;
+                $(".profil-tel").text("Telefonnummer ist jetzt " + tel);
+            }
+        }
+
+        function check_email(str) {
+                const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (emailRegex.test(str) == true) {
+                    return true;
+                }
+                else {
+                    alert("Ungültige Email Adresse");
+                    return false;
+                }
+            }
+
+        function check_tel(str) {
+            const telregex = /^[+]*[(]{0,1}[0-9]{5}[)]{0,1}[-\s\./0-9]{1,9}$/;
+            if (telregex.test(str) == true) {
+                console.log()    
+                return true;
+                }
+                else {
+                    alert("Ungültige Telefonnummer");
+                    console.log(telregex)  
+                    return false;
+                }
         }
     </script>
 </head>
@@ -79,7 +121,7 @@
     <!-- Der <nav> Tag umschließt den Navigationsbereich der Webseite. -->
     <ul>
         <!-- Das <ul> Tag erstellt eine ungeordnete Liste von Navigationslinks. -->
-        <li><a>Startseite</a></li>
+        <li><a href="./index.html">Startseite</a></li>
         <!-- Das <li> Tag definiert einzelne Listenelemente. Das <a> Tag erstellt die Links. -->
         <li><a href="inhalt.html">Bilder von unseren Produkten</a></li>
         <li><a href="kontakt.html">Kontakt und Impressum</a></li>
@@ -90,14 +132,27 @@
     <h1>Einstellungen</h1>
     <div>
         <label for="name">Name:</label>
-        <p class="profile-name"></p>
+        <p class="profil-name"></p>
         <input id="namefield">
         <button onclick="SetName()">Name ändern</button>
     </div>
-    <div>
+    <div class="margin">
+        <label for="email">E-mail:</label>
+        <p class="profil-email"></p>
+        <input id="emailfield">
+        <button onclick="setEmail()">E-mail ändern</button>
+    </div>
+    <div class="margin">
+        <label for="tel">Telefon:</label>
+        <p class="profil-tel"></p>
+        <input id="telfield">
+        <button onclick="setTel()">Telefonnummer ändern</button>
+    </div>
+    <div class="margin">
+        <label for="img">Profilbild:</label>
         <label for="img">Select image:</label>
-        <input type="file" id="profil-img" name="img" accept="image/*">
-        <img class="profile-img" src="" alt="Profilbild">
+        <input type="file" id="profil-img" name="img" accept="image/png">
+        <img style="height:150px;width:150px;" class="profile-img" src="" alt="Profilbild">
      </div>
 </div>
 <footer>
