@@ -8,7 +8,7 @@
     <!-- Der <meta> tag gibt die codierung an, in diesem Beispiel UTF 8. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Dieses <meta> Tag gibt die Ansichtsgröße für verschiedene Geräte an. -->
-    <title>DH.Campus, Einstellungen</title>
+    <title>DH-Campus, Einstellungen</title>
     <!-- Das <title> Tag setzt den Titel der Webseite, der im Browser-Tab angezeigt wird. -->
     <link rel="stylesheet" href="css/better.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -53,6 +53,15 @@
                 $(".profile-img").attr("src", 'data:image/png;base64,' + image);
             }
         }
+
+        function SetName(){
+
+            let name = document.getElementById('namefield').value;
+            if (name != null) {
+                document.cookie = "name=" + name;
+                $(".profile-name").text(name);
+            }
+        }
     </script>
 </head>
 <body onload="set_profile()">
@@ -80,12 +89,15 @@
 <div class="page">
     <h1>Einstellungen</h1>
     <div>
-
-   
-    <label for="img">Select image:</label>
-    <input type="file" id="profil-img" name="img" accept="image/*">
-    <img class="profile-img" src="" alt="Profilbild">
-
+        <label for="name">Name:</label>
+        <p class="profile-name"></p>
+        <input id="namefield">
+        <button onclick="SetName()">Name ändern</button>
+    </div>
+    <div>
+        <label for="img">Select image:</label>
+        <input type="file" id="profil-img" name="img" accept="image/*">
+        <img class="profile-img" src="" alt="Profilbild">
      </div>
 </div>
 <footer>

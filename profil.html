@@ -3,7 +3,6 @@
 <html lang="de">
 <!-- Das <html> Tag umschließt den gesamten HTML-Inhalt und gibt die Sprache des Dokuments an. -->
 <head>
-
     <style>
         table {
             width: 100%;
@@ -49,6 +48,13 @@
         function erase() {
             if (confirm("Möchten Sie wirklich Ihre Daten löschen ?\nAlle gespeicherten Informationen werden gelöscht.")) {
                 localStorage.clear();
+                const cookies = document.cookie.split(";");
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i];
+                    const eqPos = cookie.indexOf("=");
+                    const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                    document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+                }
                 alert("Sie haben Alle Daten gelöscht")
                 console.log("if")
                 setTimeout(function(){
@@ -61,8 +67,31 @@
         }
         
     </script>
+    <script>
+        function SetName(){
+            let name = prompt("Setzte deinen Namen", "Reiner Zufall")
+            if (name != null) {
+                document.cookie = "name=" + name;
+                $(".profile-name").text(name);
+            }
+        }
+    </script>
+    <script>
+        function checkName() {
+            let name = document.cookie.split("=")[1];
+            if (name != null) {
+                $(".profile-name").text(name);
+            }
+        }
+     </script>
+     <script>
+        function load() {
+            set_profile();
+            checkName();
+        }
+     </script>
 </head>
-<body onload="set_profile()">
+<body onload="load()">
 <!-- Der <body> Bereich enthält den sichtbaren Inhalt der Webseite. -->
 <header>
     <!-- Der <header> Tag umschließt den oberen Teil der Webseite, enthält oft ein Logo und eine Überschrift. -->
@@ -91,7 +120,7 @@
     <!-- Start -->
         <div class="profile-start">
             <div class="profile-des">
-                <p class="profile-name">Ihr Name</p>
+                <p onclick="SetName()" class="profile-name">Ihr Name</p>
                 <p class="profile-bes">Beschreibung: Willkommen auf Ihrem Profil für der DH-Campus Raumvermietung</p>
             </div>
             <a href="./einstellungen.html"> <img class="profile-img" src="" alt="Profilbild"> </a>
